@@ -9,9 +9,9 @@ public class Adder{
         val += v;
     }
 
-    // public void addFrom(Adder another){  คอมไพล์ไม่ผ่าน
-    //     val += another.getVal;
-    // }
+    public void addFrom(Adder another){  
+        val += another.getVal();
+    }
 
     public void reset(){
         val = 0;

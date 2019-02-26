@@ -11,7 +11,7 @@ public class AdderTest{
         b.add(1);
         System.out.println(b.getVal());
 
-        //a.addFrom(b);
+        a.addFrom(b);
         System.out.println(a.getVal());
     }
 }
