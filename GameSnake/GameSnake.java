@@ -1,29 +1,39 @@
 public class GameSnake{
-    private int player1;
-    private int player2;
-    private int count;
-    private int t;
+    private int p1;
+    private int p2;
+    private int maxSlot;
+    private int turn;
+    private Dice dices;
 
-    public GameSnake(int total){
-        player1 = 0;
-        player2 = 0;
-        count = 0;
-        t = total;
+    public GameSnake(int totalSlot){
+        p1 = 0;
+        p2 = 0;
+        maxSlot = totalSlot;
+        turn = 1;
+        dices = new Dice();
     }
 
-    public void walk(int num){
-        count++;
-        if((count%2) == 0){
-            player2 += num;
-            if(player2 >= t){
-                System.out.println("player2--win !");
-            }
+    public boolean isEnded(){
+        return p1 >= maxSlot || p2 >= maxSlot;
+    }
+
+    public void play(){
+        dices.roll();
+        walk(dices.getVal());
+    }
+
+    public void walk(int slot){
+        if(turn == 1){
+            p1 += slot;
+            turn = 2;
         }
-        else if((count%2) != 0){
-            player1 += num;
-            if(player1 >= t){
-                System.out.println("player1--win !");
-            }
+        else{
+            p2 += slot;
         }
+
+        if(p1 >= maxSlot)
+            System.out.println("Player 1 win !!");
+        else if(p2 >= maxSlot)
+            System.out.println("Player 2 win !!");
     }
 }
