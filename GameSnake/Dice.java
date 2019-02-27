@@ -1,7 +1,7 @@
 public class Dice{
     private int faceDice;
 
-    public void Dice(){
+    public Dice(){
         faceDice = 1;
     }
 
