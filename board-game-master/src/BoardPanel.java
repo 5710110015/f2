@@ -21,8 +21,8 @@ public class BoardPanel extends JPanel implements GameSpriteListener{
     bufferedImage = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
     g2d = (Graphics2D) bufferedImage.getGraphics();
     try{
-      backgrounImage = ImageIO.read(new File("src/board.png"));    
-      g2d.setBackground(Color.PINK);
+      backgrounImage = ImageIO.read(new File("src/board1.png"));    
+      g2d.setBackground(Color.BLACK);
       g2d.drawImage(backgrounImage, 0, 0, null);
     }catch(Exception e){
       System.out.println("Background image not found.");
