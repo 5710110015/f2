@@ -48,4 +48,5 @@ public class ControlPanel extends JPanel implements GameControlListener{
 
   private void updatePlayerLabel(){
     playerLabel.setText(gc.getCurrentPlayer().toString());
+  }
 }

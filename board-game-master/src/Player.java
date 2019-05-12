@@ -3,7 +3,7 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 
 public class Player extends Sprite {
-  private static Color[] COLORS = {Color.BLUE, Color.MAGENTA };
+  private static Color[] COLORS = {Color.GREEN, Color.GRAY };
   private String name;
   private int index;
   private Board board;
