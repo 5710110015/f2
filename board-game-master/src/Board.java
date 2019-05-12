@@ -11,7 +11,7 @@ public class Board {
   }
 
   public int getFinishPos() {
-    return finishPos;
+    return 80; //set Game finish pos
   }
 
   public Integer getTunnelOutPos(int pos){
@@ -36,13 +36,13 @@ public class Board {
     tunnels.put(24, 38);
     tunnels.put(34, 48);
     tunnels.put(44, 54);
-    tunnels.put(58, 68);
+    tunnels.put(58, 65);
     tunnels.put(53, 76);
     tunnels.put(30, 13);
     tunnels.put(41, 21);
     tunnels.put(47, 35);
     tunnels.put(49, 33);
-    tunnels.put(59, 53);
+    tunnels.put(59, 43);
     tunnels.put(73, 67);
     tunnels.put(78, 62);
   }

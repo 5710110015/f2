@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 public class GameController implements PlayerListener {
   private Board board;
   private Dice d1 = new Dice();
@@ -46,7 +48,10 @@ public class GameController implements PlayerListener {
 
     rollDice();
     currentPlayer.walk(d1.getFace() + d2.getFace());
-  }
+    System.out.println("Dice 1 and Dice 2 of " + currentPlayer + " is " 
+    + d1.getFace() + " and " + d2.getFace() + " in order");
+    }
+
 
   private void changeTurn() {
     if (currentPlayer == p1)
@@ -64,8 +69,10 @@ public class GameController implements PlayerListener {
   }
 
   @Override
-  public void walkCompleted(Player onwer) {        
-    changeTurn();
+  public void walkCompleted(Player onwer) {  
+    if(d1.getFace() != d2.getFace()){
+      changeTurn();
+    }       
     notifyGamePlayEnabled(true);
   }
 
@@ -73,6 +80,7 @@ public class GameController implements PlayerListener {
   public void hasWon(Player owner) {
     if (winner == null) { // first winner only
       winner = owner;
+      JOptionPane.showMessageDialog(null, "Winner is " + winner, "Winner", JOptionPane.INFORMATION_MESSAGE);
     }
   }
 
